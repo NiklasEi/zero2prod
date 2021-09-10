@@ -8,7 +8,7 @@ pub fn run(listener: TcpListener) -> Result<Server, std::io::Error> {
             .route("/", web::get().to(greet))
             .route("/health-check", web::get().to(health_check))
             .route("/{name}", web::get().to(greet))
-            .default_service(web::to(|| HttpResponse::NotFound()))
+            .default_service(web::to(HttpResponse::NotFound))
     })
     .listen(listener)?
     .run();
