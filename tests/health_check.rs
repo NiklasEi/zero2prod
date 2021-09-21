@@ -43,7 +43,7 @@ async fn spawn_app() -> TestApp {
 async fn subscribe_returns_a_200_for_valid_form_data() {
     let test_app = spawn_app().await;
     let client = reqwest::Client::new();
-    let body = "name=leguin&email=ursula_le_guin%40gmail.com";
+    let body = "name=le%20guin&email=ursula_le_guin%40gmail.com";
 
     println!("sending to {}", test_app.address);
     let response = client
